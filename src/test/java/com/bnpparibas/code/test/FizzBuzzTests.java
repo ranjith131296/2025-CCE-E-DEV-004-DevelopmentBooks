@@ -1,10 +1,12 @@
 package com.bnpparibas.code.test;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.util.Assert;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class FizzBuzzTests {
 
@@ -26,10 +28,12 @@ public class FizzBuzzTests {
     }
 
     @Test
-    public void testFizz() {
+    public void testFizzBuzzNegative() {
+        List<String> result = FizzBuzz.generate(10);
+        assertEquals("1", result.get(0));
+        assertNotEquals("Fizz", result.get(1));
+        assertNotEquals("FizzBuzz", result.get(2));
+        assertNotEquals("Buzz", result.get(3));
     }
 
-    @Test
-    public void testBuzz() {
-    }
 }
